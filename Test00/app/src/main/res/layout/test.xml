@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- *********************************************** -->
+    <!-- 1回での価格 -->
+    <TextView
+        android:id="@+id/TXV_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/TextPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 1回での価格結果 -->
+    <EditText
+        android:id="@+id/EDN_Price"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/EditTextInit"
+        app:layout_constraintStart_toEndOf="@+id/TXV_Price"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 価格の単位 -->
+    <TextView
+        android:id="@+id/TXV_PriceUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/TextPriceUnit"
+        app:layout_constraintStart_toEndOf="@+id/EDN_Price"
+        app:layout_constraintTop_toTopOf="@+id/TXV_Price" />
+
+    <!-- *********************************************** -->
+    <!-- 容量 -->
+    <TextView
+        android:id="@+id/TXV_Capacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/TextCapacity"
+        app:layout_constraintStart_toStartOf="@+id/TXV_Price"
+        app:layout_constraintTop_toTopOf="@+id/TXV_Price" />
+
+    <!-- 容量入力 -->
+    <EditText
+        android:id="@+id/EDN_Capacity"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/EditTextCapacity"
+        app:layout_constraintStart_toStartOf="@+id/EDN_Price"
+        app:layout_constraintTop_toBottomOf="@+id/EDN_Price" />
+
+    <!-- 価格の単位 -->
+    <TextView
+        android:id="@+id/TXV_CapUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/TextCapUnit"
+        app:layout_constraintStart_toEndOf="@+id/EDN_Capacity"
+        app:layout_constraintTop_toTopOf="@+id/TXV_PriceUnit" />
+
+    <!-- *********************************************** -->
+
+    <!-- 使用量 -->
+    <TextView
+        android:id="@+id/TXV_AmountToUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/TextAmountToUse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TXV_Capacity" />
+
+    <!-- 使用量入力 -->
+    <EditText
+        android:id="@+id/EDN_AmountToUse"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/EditTextCapacity"
+        app:layout_constraintStart_toStartOf="@+id/EDN_Capacity"
+        app:layout_constraintTop_toBottomOf="@+id/EDN_Capacity" />
+
+    <!-- 価格の単位 -->
+    <TextView
+        android:id="@+id/TXV_AmountUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/TextAmountUnit"
+        app:layout_constraintStart_toEndOf="@+id/EDN_Capacity"
+        app:layout_constraintTop_toTopOf="@+id/TXV_CapUnit" />
+
+    <!-- *********************************************** -->
+
+    <Button
+        android:id="@+id/BTN_Run"
+        android:layout_width="324dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+
+        android:text="@string/TextRun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EDN_AmountToUse" />
+
+    <!-- *********************************************** -->
+
+    <TextView
+        android:id="@+id/TXV_Result00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/TextResult00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BTN_Run" />
+
+    <TextView
+        android:id="@+id/TXV_Result01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/TextResult"
+        app:layout_constraintStart_toStartOf="@+id/EDN_Price"
+        app:layout_constraintTop_toTopOf="@id/TXV_Result00" />
+
+    <TextView
+        android:id="@+id/TXV_Result02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/TextResultUnit"
+        app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
+        app:layout_constraintTop_toTopOf="@id/TXV_Result01" />
+
+    <!-- *********************************************** -->
+
+    <TextView
+        android:id="@+id/TXV_Result10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/TextResult10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result00" />
+
+    <TextView
+        android:id="@+id/TXV_Result11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/TextResult"
+        app:layout_constraintStart_toStartOf="@+id/TXV_Result01"
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result01" />
+
+    <TextView
+        android:id="@+id/TXV_Result12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/TextNumUnit"
+        app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result02" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

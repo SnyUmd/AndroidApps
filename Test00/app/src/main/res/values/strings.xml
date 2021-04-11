@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">洗濯洗剤 価格計算</string>
+    <string name="TextHello">Hello World!</string>
+    <string name="TextSubHello">Hello Sub World!</string>
+    <string name="TextPrice">価格</string>
+    <string name="EditTextInit"></string>
+    <string name="TextRun">実行</string>
+    <string name="TextResult">-----------</string>
+    <string name="TextCapacity">容量</string>
+    <string name="EditTextCapacity"></string>
+    <string name="TextAmountToUse">水30Lでの洗剤の使用量</string>
+    <string name="EditTextAmountToUs"></string>
+
+    <string name="TextPriceUnit">円</string>
+    <string name="TextCapUnit">㎖</string>
+    <string name="TextAmountUnit">㎖</string>
+    <string name="TextResultUnit">円</string>
+    <string name="TextNumUnit">回</string>
+
+    <string name="TextResult00">洗濯1回での価格</string>
+    <string name="TextResult10">洗濯可能回数(水30L/回)</string>
+
+</resources>
