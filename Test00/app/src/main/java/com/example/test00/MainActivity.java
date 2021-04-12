@@ -2,8 +2,6 @@ package com.example.test00;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.media.MediaTimestamp;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -11,22 +9,19 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.app.Activity;
-import android.os.Bundle;
-import android.text.Editable;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import android.app.Activity;
 
 //**********************************************************************************************
 
-public class MainActivity extends AppCompatActivity {
+//public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+    Button Btn_Laundly;
 
+    //-------------------------------------------
     private Button Btn_Run;
+    private Button Btn_Back;
 
     private TextView Txv_Result01;
     private TextView Txv_Result11;
@@ -37,23 +32,39 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox Cbx_Tax;
 
-    //**********************************************************************************************
-    void MessageShow(String str_message, int i_len) {
-        Toast tstMessage;
-        tstMessage = Toast.makeText(this, str_message, i_len);
-        tstMessage.setGravity(Gravity.CENTER, 0, 0);
-        tstMessage.show();
-    }
 
+    //**********************************************************************************************
     //**********************************************************************************************
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.test);
+        setContentView(R.layout.activity_main);
+        MainInit();
+    }
+    //**********************************************************************************************
+    //**********************************************************************************************
+
+
+    //**********************************************************************************************
+    void MessageShow(String str_message, int i_len) {
+        Toast tstMessage;
+        tstMessage = Toast.makeText(this, str_message, i_len);
+        tstMessage.setGravity(Gravity.TOP, 0, 400);
+        tstMessage.show();
+    }
+    //**********************************************************************************************
+    public void MainInit() {
+        Btn_Laundly = this.findViewById(R.id.BTN_Laundly);
+        Btn_Laundly.setOnClickListener(new LaundlyClick());
+    }
+
+    //**********************************************************************************************
+    public void LaundryDetergentInit(){
+        setContentView(R.layout.laundry);
 
         //コンポーネント設定
         Btn_Run = this.findViewById(R.id.BTN_Run);
+        Btn_Back = this.findViewById(R.id.BTN_Back);
 
         Txv_Result01 = this.findViewById(R.id.TXV_Result01);
         Txv_Result11 = this.findViewById(R.id.TXV_Result11);
@@ -66,11 +77,20 @@ public class MainActivity extends AppCompatActivity {
         Cbx_Tax.setChecked(true);
 
         //ボタンイベント組込
-        Btn_Run.setOnClickListener(new MyClickAdapter());
+        Btn_Run.setOnClickListener(new LaundlyCalc_Click());
+        Btn_Back.setOnClickListener(new Back_Click());
     }
 
+
     //**********************************************************************************************
-    class MyClickAdapter implements View.OnClickListener{
+    class LaundlyClick implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            LaundryDetergentInit();
+        }
+    }
+    //**********************************************************************************************
+    class LaundlyCalc_Click implements View.OnClickListener{
         @Override
         public void onClick(View v){
 
@@ -95,6 +115,15 @@ public class MainActivity extends AppCompatActivity {
             Txv_Result11.setText(String.valueOf(NumResult));
 
             MessageShow("結果を更新しました。", Toast.LENGTH_SHORT);
+        }
+    }
+
+    //**********************************************************************************************
+    class Back_Click implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            setContentView(R.layout.activity_main);
+            MainInit();
         }
     }
 }

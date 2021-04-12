@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- *********************************************** -->
+    <!-- タイトル -->
+    <TextView
+        android:id="@+id/TXV_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="洗濯洗剤　価格計算"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTN_Back"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="7dp"
+
+        android:text="メイン画面"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- *********************************************** -->
+
     <!-- 1回での価格 -->
     <TextView
         android:id="@+id/TXV_Price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:text="@string/TextPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/TXV_Title" />
 
     <!-- 1回での価格結果 -->
     <EditText
@@ -23,12 +50,12 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/EditTextInit"
         app:layout_constraintStart_toEndOf="@+id/TXV_Price"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/TXV_Title" />
 
     <!-- 価格の単位 -->
     <TextView
@@ -46,12 +73,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="28dp"
 
         android:checked="true"
         android:text="税込"
         app:layout_constraintStart_toEndOf="@id/TXV_PriceUnit"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/TXV_Title" />
 
     <!-- *********************************************** -->
     <!-- 容量 -->
@@ -142,7 +169,7 @@
         android:layout_width="324dp"
         android:layout_height="46dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="10dp"
 
         android:text="@string/TextRun"
@@ -157,7 +184,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:text="@string/TextResult00"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/BTN_Run" />

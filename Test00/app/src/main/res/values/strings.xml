@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">洗濯洗剤 価格計算</string>
+    <string name="app_name">価格計算</string>
     <string name="TextHello">Hello World!</string>
     <string name="TextSubHello">Hello Sub World!</string>
     <string name="TextPrice">価格</string>
