@@ -18,13 +18,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+//**********************************************************************************************
+
 public class MainActivity extends AppCompatActivity {
 
     private Button Btn_Run;
 
-    private TextView Txv_Price;
-    private TextView Txv_Capacity;
-    private TextView Txv_AmountToUse;
     private TextView Txv_Result01;
     private TextView Txv_Result11;
 
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText Edn_Capacity;
     private EditText Edn_AmountToUse;
 
-
+    //**********************************************************************************************
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
         //コンポーネント設定
         Btn_Run = this.findViewById(R.id.BTN_Run);
 
-        //Txv_Price = this.findViewById(R.id.TXV_Price);
-        //Txv_Capacity = this.findViewById(R.id.TXV_Capacity);
-        //Txv_AmountToUse = this.findViewById(R.id.TXV_AmountToUse);
         Txv_Result01 = this.findViewById(R.id.TXV_Result01);
         Txv_Result11 = this.findViewById(R.id.TXV_Result11);
 
@@ -56,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Btn_Run.setOnClickListener(new MyClickAdapter());
     }
 
+    //**********************************************************************************************
     class MyClickAdapter implements View.OnClickListener{
         @Override
         public void onClick(View v){
@@ -69,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             double price = Integer.parseInt(strPrice);
             double cap = Integer.parseInt(strCap);
             double use = Integer.parseInt(strUse);
-
 
             double OneTimePrice = ((double)Math.round((price / cap * use) * 10000))/10000;
             double NumResult = ((double)Math.round(cap / use * 10) / 10);
