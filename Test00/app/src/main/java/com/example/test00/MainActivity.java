@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.app.Activity;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText Edn_Capacity;
     private EditText Edn_AmountToUse;
 
+    private CheckBox Cbx_Tax;
+
     //**********************************************************************************************
     void MessageShow(String str_message, int i_len) {
         Toast tstMessage;
@@ -59,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         Edn_Capacity = this.findViewById(R.id.EDN_Capacity);
         Edn_AmountToUse = this.findViewById(R.id.EDN_AmountToUse);
 
+        Cbx_Tax = this.findViewById(R.id.CBX_Tax);
+        Cbx_Tax.setChecked(true);
+
         //ボタンイベント組込
         Btn_Run.setOnClickListener(new MyClickAdapter());
     }
@@ -76,7 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 MessageShow("未入力項目があります。", Toast.LENGTH_SHORT);
                 return;
             }
+
             double price = Integer.parseInt(strPrice);
+            if(!Cbx_Tax.isChecked())
+                price *= 1.1;
             double cap = Integer.parseInt(strCap);
             double use = Integer.parseInt(strUse);
 

@@ -8,13 +8,13 @@
     <string name="TextResult">-----------</string>
     <string name="TextCapacity">容量</string>
     <string name="EditTextCapacity"></string>
-    <string name="TextAmountToUse">水30Lでの洗剤の使用量</string>
+    <string name="TextAmountToUse">洗剤の使用量(水30L)</string>
     <string name="EditTextAmountToUs"></string>
 
     <string name="TextPriceUnit">円</string>
     <string name="TextCapUnit">㎖</string>
     <string name="TextAmountUnit">㎖</string>
-    <string name="TextResultUnit">円</string>
+    <string name="TextResultUnit">円 (税込)</string>
     <string name="TextNumUnit">回</string>
 
     <string name="TextResult00">洗濯1回での価格</string>
