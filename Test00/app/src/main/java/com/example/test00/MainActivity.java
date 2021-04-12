@@ -2,8 +2,10 @@ package com.example.test00;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.media.MediaTimestamp;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 //**********************************************************************************************
 
@@ -30,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText Edn_Price;
     private EditText Edn_Capacity;
     private EditText Edn_AmountToUse;
+
+    //**********************************************************************************************
+    void MessageShow(String str_message, int i_len) {
+        Toast tstMessage;
+        tstMessage = Toast.makeText(this, str_message, i_len);
+        tstMessage.setGravity(Gravity.CENTER, 0, 0);
+        tstMessage.show();
+    }
 
     //**********************************************************************************************
     @Override
@@ -61,8 +72,10 @@ public class MainActivity extends AppCompatActivity {
             String strCap = Edn_Capacity.getText().toString();
             String strUse = Edn_AmountToUse.getText().toString();
 
-            if(strPrice.length() == 0 || strCap.length() == 0 || strUse.length() ==0) return;
-
+            if(strPrice.length() == 0 || strCap.length() == 0 || strUse.length() ==0) {
+                MessageShow("未入力項目があります。", Toast.LENGTH_SHORT);
+                return;
+            }
             double price = Integer.parseInt(strPrice);
             double cap = Integer.parseInt(strCap);
             double use = Integer.parseInt(strUse);
@@ -71,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
             double NumResult = ((double)Math.round(cap / use * 10) / 10);
             Txv_Result01.setText(String.valueOf(OneTimePrice));
             Txv_Result11.setText(String.valueOf(NumResult));
+
+            MessageShow("結果を更新しました。", Toast.LENGTH_SHORT);
         }
     }
 }
