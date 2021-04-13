@@ -16,6 +16,7 @@ public class ClsLaundry  {
 
     public TextView Txv_Result01;
     public TextView Txv_Result11;
+    public TextView Txv_Result21;
 
     public EditText Edn_Price;
     public EditText Edn_Capacity;
@@ -44,6 +45,7 @@ public class ClsLaundry  {
 
         Txv_Result01 = cls_mainA.findViewById(R.id.TXV_Result01);
         Txv_Result11 = cls_mainA.findViewById(R.id.TXV_Result11);
+        Txv_Result21 = cls_mainA.findViewById(R.id.TXV_Result21);
 
         Edn_Price = cls_mainA.findViewById(R.id.EDN_Price);
         Edn_Capacity = cls_mainA.findViewById(R.id.EDN_Capacity);
@@ -77,10 +79,12 @@ public class ClsLaundry  {
             double cap = Integer.parseInt(strCap);
             double use = Integer.parseInt(strUse);
 
-            double OneTimePrice = ((double) Math.round((price / cap * use) * 10000)) / 10000;
-            double NumResult = ((double) Math.round(cap / use * 10) / 10);
+            double OneTimePrice = ((double) Math.round((price / cap * use) * 100)) / 100;
+            double NumResult = ((double) Math.round(cap / use * 100) / 100);
+            double MonthPrice = ((double) Math.round(OneTimePrice * 30 * 100) / 100);
             Txv_Result01.setText(String.valueOf(OneTimePrice));
             Txv_Result11.setText(String.valueOf(NumResult));
+            Txv_Result21.setText(String.valueOf(MonthPrice));
 
             cls_mainA.MessageShow("結果を更新しました。", Toast.LENGTH_SHORT);
         }

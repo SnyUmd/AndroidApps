@@ -188,7 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="25dp"
-        android:text="@string/TextResult00"
+        android:text="洗濯1回の使用料"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/BTN_Run" />
 
@@ -208,11 +208,44 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        android:text="@string/TextResultUnit"
+        android:text="円 / 回（税込）"
         app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
         app:layout_constraintTop_toTopOf="@id/TXV_Result01" />
 
     <!-- *********************************************** -->
+
+    <TextView
+        android:id="@+id/TXV_Result20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="25dp"
+        android:text="1か月の使用料"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result00" />
+
+    <TextView
+        android:id="@+id/TXV_Result21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/TextResult"
+        app:layout_constraintStart_toStartOf="@+id/EDN_Price"
+        app:layout_constraintTop_toTopOf="@id/TXV_Result20" />
+
+    <TextView
+        android:id="@+id/TXV_Result22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:text="円 / 月（税込）"
+        app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
+        app:layout_constraintTop_toTopOf="@id/TXV_Result20" />
+
+    <!-- *********************************************** -->
+
 
     <TextView
         android:id="@+id/TXV_Result10"
@@ -222,7 +255,7 @@
         android:layout_marginTop="20dp"
         android:text="洗濯可能回数"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TXV_Result00" />
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result20" />
 
     <TextView
         android:id="@+id/TXV_Result10_2"
@@ -242,8 +275,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="30dp"
         android:text="@string/TextResult"
-        app:layout_constraintStart_toStartOf="@+id/TXV_Result01"
-        app:layout_constraintTop_toBottomOf="@id/TXV_Result01" />
+        app:layout_constraintStart_toStartOf="@+id/TXV_Result21"
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result21" />
 
     <TextView
         android:id="@+id/TXV_Result12"
@@ -253,7 +286,7 @@
         android:layout_marginTop="30dp"
         android:text="@string/TextNumUnit"
         app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
-        app:layout_constraintTop_toBottomOf="@id/TXV_Result02" />
+        app:layout_constraintTop_toBottomOf="@id/TXV_Result21" />
 
 
 
