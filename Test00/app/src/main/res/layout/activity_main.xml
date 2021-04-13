@@ -15,7 +15,7 @@
         android:layout_marginStart="10dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="タイトル画面"
+        android:text="メイン画面"
         android:textSize="20dp"
 
         />

@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     //-------------------------------------------
     private Button Btn_Run;
     private Button Btn_Back;
+    private Button Btn_Tissue;
 
     private TextView Txv_Result01;
     private TextView Txv_Result11;
@@ -53,12 +54,17 @@ public class MainActivity extends Activity {
         tstMessage.show();
     }
     //**********************************************************************************************
+    //メイン画面のイニシャライズ
     public void MainInit() {
         Btn_Laundly = this.findViewById(R.id.BTN_Laundly);
+        Btn_Tissue = this.findViewById(R.id.BTN_Tissue);
+
         Btn_Laundly.setOnClickListener(new LaundlyClick());
+        Btn_Tissue.setOnClickListener(new TissueClick());
     }
 
     //**********************************************************************************************
+    //洗濯洗剤部のイニシャライズ
     public void LaundryDetergentInit(){
         setContentView(R.layout.laundry);
 
@@ -89,6 +95,15 @@ public class MainActivity extends Activity {
             LaundryDetergentInit();
         }
     }
+
+    //**********************************************************************************************
+    class TissueClick implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            Btn_Laundly.performClick();
+        }
+    }
+
     //**********************************************************************************************
     class LaundlyCalc_Click implements View.OnClickListener{
         @Override
