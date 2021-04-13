@@ -1,7 +1,5 @@
 package com.example.test00;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -17,7 +15,7 @@ import android.app.Activity;
 
 //public class MainActivity extends AppCompatActivity {
 public class MainActivity extends Activity {
-    Button Btn_Laundly;
+    Button Btn_Laundry;
 
     //-------------------------------------------
     private Button Btn_Run;
@@ -56,10 +54,10 @@ public class MainActivity extends Activity {
     //**********************************************************************************************
     //メイン画面のイニシャライズ
     public void MainInit() {
-        Btn_Laundly = this.findViewById(R.id.BTN_Laundly);
+        Btn_Laundry = this.findViewById(R.id.BTN_Laundry);
         Btn_Tissue = this.findViewById(R.id.BTN_Tissue);
 
-        Btn_Laundly.setOnClickListener(new LaundlyClick());
+        Btn_Laundry.setOnClickListener(new LandryClick());
         Btn_Tissue.setOnClickListener(new TissueClick());
     }
 
@@ -83,13 +81,13 @@ public class MainActivity extends Activity {
         Cbx_Tax.setChecked(true);
 
         //ボタンイベント組込
-        Btn_Run.setOnClickListener(new LaundlyCalc_Click());
+        Btn_Run.setOnClickListener(new LandryCalc_Click());
         Btn_Back.setOnClickListener(new Back_Click());
     }
 
 
     //**********************************************************************************************
-    class LaundlyClick implements View.OnClickListener{
+    class LandryClick implements View.OnClickListener{
         @Override
         public void onClick(View v){
             LaundryDetergentInit();
@@ -100,12 +98,12 @@ public class MainActivity extends Activity {
     class TissueClick implements View.OnClickListener{
         @Override
         public void onClick(View v){
-            Btn_Laundly.performClick();
+            Btn_Laundry.performClick();
         }
     }
 
     //**********************************************************************************************
-    class LaundlyCalc_Click implements View.OnClickListener{
+    class LandryCalc_Click implements View.OnClickListener{
         @Override
         public void onClick(View v){
 
