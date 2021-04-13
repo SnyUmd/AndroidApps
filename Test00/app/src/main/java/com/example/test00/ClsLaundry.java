@@ -1,6 +1,7 @@
 package com.example.test00;
 
 import android.app.Activity;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -8,8 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-public class clsLaundry extends MainActivity {
+public class ClsLaundry  {
 
     public Button Btn_Run;
     public Button Btn_Back;
@@ -23,23 +23,33 @@ public class clsLaundry extends MainActivity {
 
     public CheckBox Cbx_Tax;
 
+    public MainActivity cls_mainA;
+
+    //**********************************************************************************************
+    //コンストラクタ
+    //クラス生成時に親クラスを指定する。
+    ClsLaundry(MainActivity m){
+        cls_mainA = m;
+    }
+
+
     //**********************************************************************************************
     //洗濯洗剤部のイニシャライズ
     public void LaundryDetergentInit(){
-        setContentView(R.layout.laundry);
+        cls_mainA.setContentView(R.layout.laundry);
 
         //コンポーネント設定
-        Btn_Run = this.findViewById(R.id.BTN_Run);
-        Btn_Back = this.findViewById(R.id.BTN_Back);
+        Btn_Run = cls_mainA.findViewById(R.id.BTN_Run);
+        Btn_Back = cls_mainA.findViewById(R.id.BTN_Back);
 
-        Txv_Result01 = this.findViewById(R.id.TXV_Result01);
-        Txv_Result11 = this.findViewById(R.id.TXV_Result11);
+        Txv_Result01 = cls_mainA.findViewById(R.id.TXV_Result01);
+        Txv_Result11 = cls_mainA.findViewById(R.id.TXV_Result11);
 
-        Edn_Price = this.findViewById(R.id.EDN_Price);
-        Edn_Capacity = this.findViewById(R.id.EDN_Capacity);
-        Edn_AmountToUse = this.findViewById(R.id.EDN_AmountToUse);
+        Edn_Price = cls_mainA.findViewById(R.id.EDN_Price);
+        Edn_Capacity = cls_mainA.findViewById(R.id.EDN_Capacity);
+        Edn_AmountToUse = cls_mainA.findViewById(R.id.EDN_AmountToUse);
 
-        Cbx_Tax = this.findViewById(R.id.CBX_Tax);
+        Cbx_Tax = cls_mainA.findViewById(R.id.CBX_Tax);
         Cbx_Tax.setChecked(true);
 
         //ボタンイベント組込
@@ -57,7 +67,7 @@ public class clsLaundry extends MainActivity {
             String strUse = Edn_AmountToUse.getText().toString();
 
             if (strPrice.length() == 0 || strCap.length() == 0 || strUse.length() == 0) {
-//                MessageShow("未入力項目があります。", Toast.LENGTH_SHORT);
+                cls_mainA.MessageShow("未入力項目があります。", Toast.LENGTH_SHORT);
                 return;
             }
 
@@ -72,15 +82,15 @@ public class clsLaundry extends MainActivity {
             Txv_Result01.setText(String.valueOf(OneTimePrice));
             Txv_Result11.setText(String.valueOf(NumResult));
 
-            MessageShow("結果を更新しました。", Toast.LENGTH_SHORT);
+            cls_mainA.MessageShow("結果を更新しました。", Toast.LENGTH_SHORT);
         }
     }
         //**********************************************************************************************
     class Back_Click implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            setContentView(R.layout.activity_main);
-            MainInit();
+            cls_mainA.setContentView(R.layout.activity_main);
+            cls_mainA.MainInit();
         }
     }
 }
