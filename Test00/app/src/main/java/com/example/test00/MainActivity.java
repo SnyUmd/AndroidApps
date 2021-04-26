@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
 
 
     //**********************************************************************************************
+    //メッセージダイアログを表示する
     void MessageShow(String str_message, int i_len) {
         Toast tstMessage;
         tstMessage = Toast.makeText(this, str_message, i_len);
@@ -48,6 +49,7 @@ public class MainActivity extends Activity {
     }
 
     //**********************************************************************************************
+    //洗濯洗剤をクリックした時の処理
     class LandryClick implements View.OnClickListener{
         @Override
         public void onClick(View v){
@@ -56,10 +58,12 @@ public class MainActivity extends Activity {
     }
 
     //**********************************************************************************************
+    //ティッシュをクリックした時の処理
     class TissueClick implements View.OnClickListener{
         @Override
         public void onClick(View v){
-            Btn_Laundry.performClick();
+            //Btn_Laundry.performClick();
+            MessageShow("未実装", Toast.LENGTH_SHORT);
         }
     }
 }

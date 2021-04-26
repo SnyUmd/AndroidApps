@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="洗濯洗剤　価格計算"
+        android:text="ティッシュ　価格計算"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="65dp"
-        android:text="@string/TextCapacity"
+        android:text="組数"
         app:layout_constraintStart_toStartOf="@+id/TXV_Price"
         app:layout_constraintTop_toTopOf="@+id/TXV_Price" />
 
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="65dp"
-        android:text="@string/TextCapUnit"
+        android:text="枚"
         app:layout_constraintStart_toEndOf="@+id/EDN_Capacity"
         app:layout_constraintTop_toTopOf="@+id/TXV_PriceUnit" />
 
@@ -125,20 +125,12 @@
         android:id="@+id/TXV_AmountToUse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="55dp"
-        android:text="洗剤の使用量"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/TXV_Capacity" />
-    <TextView
-        android:id="@+id/TXV_AmountToUse2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:text="(水30ℓ時)"
-        app:layout_constraintStart_toStartOf="@+id/TXV_AmountToUse"
-        app:layout_constraintTop_toBottomOf="@+id/TXV_AmountToUse" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="60dp"
+        android:text="箱数"
+        app:layout_constraintTop_toTopOf="@+id/TXV_Capacity"
+        app:layout_constraintStart_toStartOf="@+id/TXV_Capacity"  />
+
 
     <!-- 使用量入力 -->
     <EditText
@@ -161,7 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="65dp"
-        android:text="@string/TextAmountUnit"
+        android:text="箱"
         app:layout_constraintStart_toEndOf="@+id/EDN_Capacity"
         app:layout_constraintTop_toTopOf="@+id/TXV_CapUnit" />
 
@@ -208,7 +200,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        android:text="円 / 回（税込）"
+        android:text="円 / 枚（税込）"
         app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
         app:layout_constraintTop_toTopOf="@id/TXV_Result01" />
 
@@ -218,10 +210,10 @@
         android:id="@+id/TXV_Result20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
         android:text="1か月の使用料"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf= "@id/TXV_Result00"
         app:layout_constraintTop_toBottomOf="@id/TXV_Result00" />
 
     <TextView
@@ -240,7 +232,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        android:text="円 / 月（税込）"
+        android:text="円 / 箱（税込）"
         app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
         app:layout_constraintTop_toTopOf="@id/TXV_Result20" />
 
@@ -251,21 +243,11 @@
         android:id="@+id/TXV_Result10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="20dp"
-        android:text="洗濯可能回数"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:text="合計枚数"
+        app:layout_constraintEnd_toEndOf="@id/TXV_Result20"
         app:layout_constraintTop_toBottomOf="@id/TXV_Result20" />
-
-    <TextView
-        android:id="@+id/TXV_Result10_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:text="(水30L/回)"
-        app:layout_constraintStart_toStartOf="@+id/TXV_Result10"
-        app:layout_constraintTop_toBottomOf="@id/TXV_Result10" />
 
 
     <TextView
@@ -284,7 +266,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginTop="30dp"
-        android:text="@string/TextNumUnit"
+        android:text="枚"
         app:layout_constraintStart_toStartOf="@+id/TXV_AmountUnit"
         app:layout_constraintTop_toBottomOf="@id/TXV_Result21" />
 

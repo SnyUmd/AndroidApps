@@ -54,7 +54,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="@string/EditTextInit"
-        android:gravity="right"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/TXV_Price"
         app:layout_constraintTop_toBottomOf="@id/TXV_Title" />
 
@@ -103,7 +103,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="@string/EditTextCapacity"
-        android:gravity="right"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="@+id/EDN_Price"
         app:layout_constraintTop_toBottomOf="@+id/EDN_Price" />
 
@@ -150,7 +150,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="@string/EditTextCapacity"
-        android:gravity="right"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="@+id/EDN_Capacity"
         app:layout_constraintTop_toBottomOf="@+id/EDN_Capacity" />
 
